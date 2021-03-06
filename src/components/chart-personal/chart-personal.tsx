@@ -1,5 +1,5 @@
 import { Component, h, Watch, Element, Prop } from '@stencil/core';
-import { drawScale,drawArea, drawCirculoInterior, drawLabelPersonalChart, drawPersonalMetrics, drawReportArea, drawScore, drawTablero, getCompanyReportArray, getDiferenceValues, getPersonalReportArray } from '../utils';
+import { drawScale,drawArea, drawCirculoInterior, drawLabelPersonalChart, drawPersonalMetrics, drawScore, drawTablero, getCompanyReportArray, getDiferenceValues, getPersonalReportArray, drawReportAreaPersonal } from '../utils';
 
 
 @Component({
@@ -74,8 +74,8 @@ export class ChartPersonal {
 
     this.canvas.width = this.width;
     this.canvas.height = this.height;
-    // // console.log(this.width, ' x ', this.height);
-    // // console.log('center: ', this.width / 2, ' x ', this.height / 2);
+    // // // console.log(this.width, ' x ', this.height);
+    // // // console.log('center: ', this.width / 2, ' x ', this.height / 2);
     drawTablero(this.context, this.width, this.height);
     if (this.data) {
       drawPersonalMetrics(this.context, getPersonalReportArray(this.data), this.width, this.height);
@@ -84,7 +84,7 @@ export class ChartPersonal {
       drawLabelPersonalChart(this.context, this.width, this.height);
       getDiferenceValues(getCompanyReportArray(this.data), getPersonalReportArray(this.data));
 
-      drawReportArea(this.context, getCompanyReportArray(this.data), getPersonalReportArray(this.data), this.width, this.height);
+      drawReportAreaPersonal(this.context, getPersonalReportArray(this.data), this.width, this.height);
     }
     drawArea(this.context, this.width, this.height);
     drawCirculoInterior(this.context, this.width, this.height);
@@ -96,7 +96,7 @@ export class ChartPersonal {
   }
 
   componentDidRender() {
-    // // console.log(document.getElementById('canvas'));
+    // // // console.log(document.getElementById('canvas'));
     this.canvas = this.el.shadowRoot.getElementById('canvasPersonal');
     this.context = this.canvas.getContext('2d');
   }
@@ -122,9 +122,9 @@ export class ChartPersonal {
     ctx.restore();
   }
   getColor(type: any) {
-    // console.log('type', type.value);
+    // // console.log('type', type.value);
 
-    // // console.log('data.personal_report', type.value);
+    // // // console.log('data.personal_report', type.value);
     let color;
     if (this.businessColors) {
       if (this.businessColors.primary) {
@@ -201,7 +201,7 @@ export class ChartPersonal {
       this.context.save()
       this.roundedRectFill(this.context, 45, 75, 100, 15, 5, '#f3f6f9');
       this.context.restore()
-      // console.log('S value', this.data.personal_report.S.value);
+      // // console.log('S value', this.data.personal_report.S.value);
       this.context.save();
       if (this.data && this.data.personal_report) {
         this.roundedRectFill(this.context, 45, 75, parseInt(this.data.personal_report.S.value), 15, 5, this.getColor(this.data.personal_report.S));

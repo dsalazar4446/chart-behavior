@@ -73,7 +73,7 @@ export class ChartBehavior {
   }
 
   componentDidRender() {
-    // // console.log(document.getElementById('canvas'));
+    // // // console.log(document.getElementById('canvas'));
     this.canvas = this.el.shadowRoot.getElementById('canvasBehavior');
     this.context = this.canvas.getContext('2d');
   }
@@ -84,19 +84,19 @@ export class ChartBehavior {
 
     this.canvas.width = this.width;
     this.canvas.height = this.height;
-    // // console.log(this.width, ' x ', this.height);
-    // // console.log('center: ', this.width / 2, ' x ', this.height / 2);
+    // // // console.log(this.width, ' x ', this.height);
+    // // // console.log('center: ', this.width / 2, ' x ', this.height / 2);
     drawTablero(this.context, this.width, this.height);
     if (this.data) {
       this.converterData()
-      // console.log('companyReport!!!!!', this.companyReport);
+      // // console.log('companyReport!!!!!', this.companyReport);
       drawPersonalMetrics(this.context, getPersonalReportArray(this.data), this.width, this.height);
       drawCompanyMetrics(this.context, getCompanyReportArray(this.data), this.width, this.height);
       getDiferenceValues(getCompanyReportArray(this.data), getPersonalReportArray(this.data));
-      const companyReport = getCompanyReportArray(this.data);
-      const personalRepport = getPersonalReportArray(this.data);
-      console.log('lalallaa', companyReport);
-      console.log('lalallaa', personalRepport);
+      // const companyReport = getCompanyReportArray(this.data);
+      // const personalRepport = getPersonalReportArray(this.data);
+      // console.log('lalallaa', companyReport);
+      // console.log('lalallaa', personalRepport);
 
       drawReportArea(this.context, getCompanyReportArray(this.data), getPersonalReportArray(this.data), this.width, this.height);
       drawLabels(this.context, this.width, this.height, getCompanyReportArray(this.data), getPersonalReportArray(this.data));
@@ -116,7 +116,7 @@ export class ChartBehavior {
   converterData() {
     this.personalReport = getPersonalReportArray(this.data);
     this.companyReport = getCompanyReportArray(this.data);
-    // console.log('---------------- companyReport', this.companyReport);
+    // // console.log('---------------- companyReport', this.companyReport);
     if (this.companyReport.length > 0) {
       this.companyReport = getDiferenceValues(this.personalReport, this.companyReport);
     }
@@ -471,7 +471,7 @@ export class ChartBehavior {
   barPersonal1() {
     if (this.context) {
       this.context.save();
-      // // console.log('color',this.getColor(this.data.personal_report.F));
+      // // // console.log('color',this.getColor(this.data.personal_report.F));
       if (this.data && this.data.personal_report) {
         this.roundedRectFill(this.context, this.width - 58, 10, 15, 50, 5, this.getColor(this.data.personal_report.F));
       } else {
@@ -482,7 +482,7 @@ export class ChartBehavior {
     }
   }
   getColor(type: any) {
-    // // console.log('data.personal_report', type.value);
+    // // // console.log('data.personal_report', type.value);
     let color;
     if (this.businessColors) {
       if (this.businessColors.primary) {
@@ -520,22 +520,22 @@ export class ChartBehavior {
     } else {
       if (type.value >= 0 && type.value <= 20) {
         color = '#FF0000';
-        // console.log(type.sufix, type.value, 'color asignado', color);
+        // // console.log(type.sufix, type.value, 'color asignado', color);
       }
       if (type.value >= 21 && type.value <= 40) {
         color = '#E69138';
-        // console.log(type.sufix, type.value, 'color asignado', color);
+        // // console.log(type.sufix, type.value, 'color asignado', color);
       }
       if (type.value >= 41 && type.value <= 60) {
         color = '#F9CB9C';
-        // console.log(type.sufix, type.value, 'color asignado', color);
+        // // console.log(type.sufix, type.value, 'color asignado', color);
       }
       if (type.value >= 61 && type.value <= 80) {
         color = '#D9EAD3';
       }
       if (type.value >= 81 && type.value <= 100) {
         color = '#93C47D';
-        // console.log(type.sufix, type.value, 'color asignado', color);
+        // // console.log(type.sufix, type.value, 'color asignado', color);
       }
     }
 

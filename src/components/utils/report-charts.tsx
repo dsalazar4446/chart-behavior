@@ -89,24 +89,24 @@ const companyReportAtrea = (ctx: CanvasRenderingContext2D, x: number, y: number,
 };
 
 export const drawLabels = (ctx: CanvasRenderingContext2D, width: number, height: number, companyReport: Array<any>, personalReport: Array<any>) => {
-  // console.log('drawLabels', companyReport);
+  // // console.log('drawLabels', companyReport);
 
   let ai = 22.5;
   if (companyReport && companyReport.length  > 0) {
     companyReport.forEach((elem: any) => {
       elem.areas.map((area: any) => {
-        // console.log(area.sufix);
+        // // console.log(area.sufix);
 
         nameArea(ctx, width / 2, height / 2, bigRadio(height), ai, height, area.sufix);
         ai += 22.5;
       });
     });
   } else {
-    // console.log('entre');
+    // // console.log('entre');
 
     personalReport.forEach((elem: any) => {
       elem.areas.map((area: any) => {
-        // console.log(area.sufix);
+        // // console.log(area.sufix);
         nameArea(ctx, width / 2, height / 2, bigRadio(height), ai, height, area.sufix);
         ai += 22.5;
       });
@@ -413,7 +413,7 @@ const nameArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: nu
 
 export const drawReportArea = (ctx: CanvasRenderingContext2D, companyReport: Array<any>, personalReport: Array<any>, width: number, height: number) => {
   let ai = 22.5;
-  console.log('drawReportArea', companyReport);
+  // console.log('drawReportArea', companyReport);
 
   if (companyReport.length > 0) {
     companyReport.forEach((elem: any) => {
@@ -422,7 +422,7 @@ export const drawReportArea = (ctx: CanvasRenderingContext2D, companyReport: Arr
 
         const radio = percent + bigRadio(height) - factor(height) * 4.3;
         // this.area(this.width / 2, this.height / 2, bigRadio(height), i, ai)
-        console.log(area.diference);
+        // console.log(area.diference);
 
         reportArea(ctx, width / 2, height / 2, radio, ai, height, area.diference, 'company');
         // this.nameArea(this.width / 2, this.height / 2, bigRadio(height), ai, area.sufix)
@@ -430,16 +430,16 @@ export const drawReportArea = (ctx: CanvasRenderingContext2D, companyReport: Arr
       });
     });
   } else {
-    console.log('personalReport', personalReport);
+    // console.log('personalReport', personalReport);
 
     personalReport.forEach((elem: any) => {
       elem.areas.map((area: any) => {
-        // console.log(area);
+        // // console.log(area);
         const percent = Math.floor((parseFloat(area.value) * 100) / smallRadio(height));
 
         const radio = percent + bigRadio(height) - factor(height) * 4.3;
         // this.area(this.width / 2, this.height / 2, bigRadio(height), i, ai)
-        console.log(area.value);
+        // console.log(area.value);
         reportArea(ctx, width / 2, height / 2, radio, ai, height, area.value, 'personal');
         // this.nameArea(this.width / 2, this.height / 2, bigRadio(height), ai, area.sufix)
         ai += 22.5;
@@ -447,6 +447,30 @@ export const drawReportArea = (ctx: CanvasRenderingContext2D, companyReport: Arr
     });
   }
 };
+
+export const drawReportAreaPersonal = (ctx: CanvasRenderingContext2D, personalReport: Array<any>, width: number, height: number) => {
+  let ai = 22.5;
+  // console.log('drawReportArea', companyReport);
+
+   if (personalReport && personalReport.length > 0) {
+     // console.log('personalReport', personalReport);
+
+     personalReport.forEach((elem: any) => {
+       elem.areas.map((area: any) => {
+         // // console.log(area);
+         const percent = Math.floor((parseFloat(area.value) * 100) / smallRadio(height));
+
+         const radio = percent + bigRadio(height) - factor(height) * 4.3;
+         // this.area(this.width / 2, this.height / 2, bigRadio(height), i, ai)
+         // console.log(area.value);
+         reportArea(ctx, width / 2, height / 2, radio, ai, height, area.value, 'personal');
+         // this.nameArea(this.width / 2, this.height / 2, bigRadio(height), ai, area.sufix)
+         ai += 22.5;
+       });
+     });
+   }
+};
+
 
 const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: number, anguloInicial: number, height: number, diference: number, type: string) => {
   if (ctx) {

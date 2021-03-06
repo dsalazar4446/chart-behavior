@@ -2,12 +2,12 @@ export const getCompanyReportArray = (data: any) => {
   let companyReport = [];
 
   if (!data.company_report) {
-    // console.log('entre -------------------');
+    // // console.log('entre -------------------');
 
     return companyReport;
   }
 
-  // console.log('pase -------------------');
+  // // console.log('pase -------------------');
   companyReport.push(data.company_report.M);
   companyReport.push(data.company_report.E);
   companyReport.push(data.company_report.S);
@@ -22,7 +22,7 @@ export const getCompanyReportArray = (data: any) => {
 
 export const getPersonalReportArray = (data: any) => {
   let personalReport = [];
-  // console.log('data.personal_report', data.personal_report);
+  // // console.log('data.personal_report', data.personal_report);
   if (!data.personal_report) {
     return personalReport;
   }
@@ -44,7 +44,7 @@ export const getDiferenceValues = (compayReportArray: Array<any>, personalReport
        const result = report.areas.map((elem: any) => ({ sufix: elem.sufix, value: elem.value }));
        valuesAreasPersonalReport = valuesAreasPersonalReport.concat(result);
      });
-     // // console.log('valuesAreasPersonalReport', valuesAreasPersonalReport);
+     // // // console.log('valuesAreasPersonalReport', valuesAreasPersonalReport);
 
      compayReportArray = compayReportArray.map(report => {
        report.areas.map((elem: any) => {
@@ -54,7 +54,7 @@ export const getDiferenceValues = (compayReportArray: Array<any>, personalReport
          }
        });
      });
-     // // console.log('getDiferenceValues', compayReportArray);
+     // // // console.log('getDiferenceValues', compayReportArray);
 
      return [...compayReportArray];
   }
