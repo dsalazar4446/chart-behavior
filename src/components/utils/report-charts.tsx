@@ -483,69 +483,69 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
         ctx.save();
         if (type === 'company') {
           xTex = x + (radio - factor(height)) * Math.cos(angleText);
-          yTex = y + (radio - factor(height)) * Math.sin(angleText);
+          yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         } else {
           xTex = x + (radio - factor(height)) * Math.cos(angleText);
-          yTex = y + (radio - factor(height)) * Math.sin(angleText);
+          yTex = y + (radio - factor(height)) * Math.sin(angleText)+ 30;
         }
         ctx.translate(xTex, yTex);
-        ctx.rotate(1.7);
+        ctx.rotate(-1.4);
       }
       //M2
       if (anguloInicial == 45) {
         ctx.save();
         xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         ctx.translate(xTex, yTex);
-        ctx.rotate(2.2);
+        ctx.rotate(-1);
       }
       //M3
       if (anguloInicial == 67.5) {
         ctx.save();
         xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         ctx.translate(xTex, yTex);
-        ctx.rotate(2.6);
+        ctx.rotate(-0.6);
       }
       // M4
       if (anguloInicial == 90) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) -15;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         ctx.translate(xTex, yTex);
-        ctx.rotate(3);
+        ctx.rotate(-0.2);
       }
       // E1
       if (anguloInicial == 112.5) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        xTex = x + (radio - factor(height)) * Math.cos(angleText)- 25;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) +25;
         ctx.translate(xTex, yTex);
-        ctx.rotate(3.3);
+        ctx.rotate(0.1);
       }
       // E2
       if (anguloInicial == 135) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) - 30;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) ;
         ctx.translate(xTex, yTex);
-        ctx.rotate(3.8);
+        ctx.rotate(0.5);
       }
       // E3
       if (anguloInicial == 157.5) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) -30;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) -5;
         ctx.translate(xTex, yTex);
-        ctx.rotate(4.1);
+        ctx.rotate(0.9);
       }
       // E4
       if (anguloInicial == 180) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText);
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) -30;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) - 15;
         ctx.translate(xTex, yTex);
-        ctx.rotate(4.6);
+        ctx.rotate(1.3);
       }
       // S1
       if (anguloInicial == 202.5) {
