@@ -15,7 +15,7 @@ import {
 @Component({
   tag: 'chart-behavior',
   styleUrl: 'chart-behavior.css',
-  shadow: true,
+  // shadow: true,
 })
 export class ChartBehavior {
   @Prop({ mutable: true, reflect: true }) data: any;
@@ -74,7 +74,7 @@ export class ChartBehavior {
 
   componentDidRender() {
     // // // console.log(document.getElementById('canvas'));
-    this.canvas = this.el.shadowRoot.getElementById('canvasBehavior');
+    this.canvas = document.getElementById('canvasBehavior');
     this.context = this.canvas.getContext('2d');
   }
 

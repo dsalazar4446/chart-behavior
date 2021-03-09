@@ -5,7 +5,7 @@ import { drawScale,drawArea, drawCirculoInterior, drawLabelPersonalChart, drawPe
 @Component({
   tag: 'chart-personal',
   styleUrl: 'chart-personal.css',
-  shadow: true,
+  // shadow: true,
 })
 export class ChartPersonal {
   @Prop({ mutable: true, reflect: true }) data: any;
@@ -97,7 +97,7 @@ export class ChartPersonal {
 
   componentDidRender() {
     // // // console.log(document.getElementById('canvas'));
-    this.canvas = this.el.shadowRoot.getElementById('canvasPersonal');
+    this.canvas = document.getElementById('canvasPersonal');
     this.context = this.canvas.getContext('2d');
   }
 
