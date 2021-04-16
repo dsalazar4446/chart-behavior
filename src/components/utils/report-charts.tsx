@@ -92,7 +92,7 @@ export const drawLabels = (ctx: CanvasRenderingContext2D, width: number, height:
   // // console.log('drawLabels', companyReport);
 
   let ai = 22.5;
-  if (companyReport && companyReport.length  > 0) {
+  if (companyReport && companyReport.length > 0) {
     companyReport.forEach((elem: any) => {
       elem.areas.map((area: any) => {
         // // console.log(area.sufix);
@@ -116,7 +116,7 @@ export const drawLabels = (ctx: CanvasRenderingContext2D, width: number, height:
 
 export const drawLabelPersonalChart = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
   let ai = 22.5;
-    labelPersonalChart(ctx, width / 2, height / 2, bigRadio(height), ai, height);
+  labelPersonalChart(ctx, width / 2, height / 2, bigRadio(height), ai, height);
 };
 
 export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: number, anguloInicial: number = 22.5, height: number) => {
@@ -125,8 +125,8 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
   let yTex;
   // Mentalidad Innovadora
   if (anguloInicial == 22.5) {
-    xTex = x + (radio - factor(height)) * Math.cos(angleText)+5;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText) + 35+5;
+    xTex = x + (radio - factor(height)) * Math.cos(angleText) + 5;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) + 40;
     ctx.save();
     ctx.translate(xTex, yTex);
     ctx.rotate(-1.35);
@@ -136,7 +136,7 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
     ctx.fillText('Mentalidad', 0, 0);
     ctx.restore();
     xTex = x + (radio - factor(height)) * Math.cos(angleText) + 15;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText) + 39+5;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) + 45;
     ctx.save();
     ctx.translate(xTex, yTex);
     ctx.rotate(-1.35);
@@ -146,11 +146,11 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
     ctx.fillText('Innovadora', 0, 0);
     ctx.restore();
   }
-  anguloInicial = 22.5 *2;
+  anguloInicial = 22.5 * 2;
   angleText = (Math.PI / 180) * anguloInicial + 50;
-  if (anguloInicial == 22.5*2) {
-    xTex = x + (radio - factor(height)) * Math.cos(angleText)-12;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText)+12;
+  if (anguloInicial == 22.5 * 2) {
+    xTex = x + (radio - factor(height)) * Math.cos(angleText) - 12;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) + 12;
     ctx.save();
     ctx.translate(xTex, yTex);
     ctx.rotate(-1);
@@ -160,7 +160,7 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
     ctx.fillText('Mentalidad', 0, 0);
     ctx.restore();
     xTex = x + (radio - factor(height)) * Math.cos(angleText);
-    yTex = y + (radio + factor(height)) * Math.sin(angleText)+13 ;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) + 13;
     ctx.save();
     ctx.translate(xTex, yTex);
     ctx.rotate(-1);
@@ -174,21 +174,21 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
   anguloInicial = 22.5 * 3;
   angleText = (Math.PI / 180) * anguloInicial + 50;
   if (anguloInicial == 22.5 * 3) {
-    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) / 1.2;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) / 1.7;
+    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) + 5;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) + 20;
     ctx.save();
     ctx.translate(xTex, yTex);
-    ctx.rotate(-0.60);
+    ctx.rotate(-0.55);
     ctx.beginPath();
     ctx.fillStyle = '#948e8e';
     ctx.font = 'bold 8pt Verdana';
     ctx.fillText('Resilencia', 0, 0);
     ctx.restore();
-    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) / 2.3;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) / 2.3;
+    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) + 20;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) + 25;
     ctx.save();
     ctx.translate(xTex, yTex);
-    ctx.rotate(-0.60);
+    ctx.rotate(-0.55);
     ctx.beginPath();
     ctx.fillStyle = '#948e8e';
     ctx.font = 'bold 8pt Verdana';
@@ -199,21 +199,21 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
   anguloInicial = 22.5 * 4;
   angleText = (Math.PI / 180) * anguloInicial + 50;
   if (anguloInicial == 22.5 * 4) {
-    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) / 0.7;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) / 0.8;
+    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) - 18;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) - 6;
     ctx.save();
     ctx.translate(xTex, yTex);
-    ctx.rotate(-0.15);
+    ctx.rotate(-0.18);
     ctx.beginPath();
     ctx.fillStyle = '#948e8e';
     ctx.font = 'bold 8pt Verdana';
     ctx.fillText('Mentalidad de', 0, 0);
     ctx.restore();
-    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) / 0.85;
-    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) / 1;
+    xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) - 10;
+    yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) + 5;
     ctx.save();
     ctx.translate(xTex, yTex);
-    ctx.rotate(-0.15);
+    ctx.rotate(-0.18);
     ctx.beginPath();
     ctx.fillStyle = '#948e8e';
     ctx.font = 'bold 8pt Verdana';
@@ -224,11 +224,12 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
   anguloInicial = 22.5 * 5;
   angleText = (Math.PI / 180) * anguloInicial + 50;
   if (anguloInicial == 22.5 * 5) {
+    const angleRotation = 0.2;
     xTex = x + (radio - factor(height)) * Math.cos(angleText) - factor(height) / 0.6;
     yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) / 0.55;
     ctx.save();
     ctx.translate(xTex, yTex);
-    ctx.rotate(0.15);
+    ctx.rotate(angleRotation);
     ctx.beginPath();
     ctx.fillStyle = '#948e8e';
     ctx.font = 'bold 8pt Verdana';
@@ -238,7 +239,7 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
     yTex = y + (radio + factor(height)) * Math.sin(angleText) - factor(height) / 0.65;
     ctx.save();
     ctx.translate(xTex, yTex);
-    ctx.rotate(0.15);
+    ctx.rotate(angleRotation);
     ctx.beginPath();
     ctx.fillStyle = '#948e8e';
     ctx.font = 'bold 8pt Verdana';
@@ -247,28 +248,27 @@ export const labelPersonalChart = (ctx: CanvasRenderingContext2D, x: number, y: 
   }
 
   anguloInicial = 22.5 * 6;
-  label(ctx, x, y, radio, height, anguloInicial, 0.65,'Trabajo en', 'equipo', {x:0.78,y:0.48}, {x:0.8,y:0.58}, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, 0.60, 'Trabajo en', 'equipo', { x: 0.78, y: 0.48 }, { x: 0.8, y: 0.58 }, 7.5);
   anguloInicial = 22.5 * 7;
-  label(ctx, x, y, radio, height, anguloInicial, 0.99, 'Relacion', 'con colegas', { x: 1, y: 0.5 }, { x: 0.78, y: 0.53 }, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, 1, 'Relacion', 'con colegas', { x: 1, y: 0.53 }, { x: 0.78, y: 0.53 }, 7.5);
   anguloInicial = 22.5 * 8;
-  label(ctx, x, y, radio, height, anguloInicial, 1.4, 'Manejando la', 'presion', { x: 1.5, y: 0.5 }, { x: 1.1, y: 0.65 }, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, 1.39, 'Manejando la', 'presion', { x: 1.5, y: 0.5 }, { x: 1.1, y: 0.65 }, 7.5);
   anguloInicial = 22.5 * 9;
   label(ctx, x, y, radio, height, anguloInicial, -1.4, 'Identidad', '', { x: 2, y: -2 }, { x: 0, y: 0 }, 7.5);
   anguloInicial = 22.5 * 10;
   label(ctx, x, y, radio, height, anguloInicial, -1, 'Valores', '', { x: 2, y: -1 }, { x: 0, y: 0 }, 7.5);
   anguloInicial = 22.5 * 11;
-  label(ctx, x, y, radio, height, anguloInicial, -0.6, 'Satisfaccion en', 'el trabajo', { x: 1.1, y: -0.7 }, { x: 1.5, y: -0.6 }, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, -0.6, 'Satisfaccion en', 'el trabajo', { x: 1.1, y: -0.66 }, { x: 2, y: -0.65 }, 7.5);
   anguloInicial = 22.5 * 12;
   label(ctx, x, y, radio, height, anguloInicial, -0.2, 'Busqueda', '', { x: 2.3, y: -0.63 }, { x: 0, y: 0 }, 7.5);
   anguloInicial = 22.5 * 13;
-  label(ctx, x, y, radio, height, anguloInicial, 0.2, 'Salud Fisica', '', { x: 2.3, y: -0.66 }, { x: 0, y: 0 }, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, 0.15, 'Salud Fisica', '', { x: 2.3, y: -0.66 }, { x: 0, y: 0 }, 7.5);
   anguloInicial = 22.5 * 14;
-  label(ctx, x, y, radio, height, anguloInicial, 0.65, 'Sueño', '', { x: -5, y: -0.8 }, { x: 0, y: 0 }, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, 0.6, 'Sueño', '', { x: -5, y: -0.75 }, { x: 0, y: 0 }, 7.5);
   anguloInicial = 22.5 * 15;
-  label(ctx, x, y, radio, height, anguloInicial, 1, 'Cuerpo en', 'movimiento', { x: -2.5, y: -2 }, { x: -8, y: -2 }, 7.5);
+  label(ctx, x, y, radio, height, anguloInicial, 0.95, 'Cuerpo en', 'movimiento', { x: -5, y: -1.5 }, { x: 7, y: -1.5 }, 7.5);
   anguloInicial = 22.5 * 16;
-  label(ctx, x, y, radio, height, anguloInicial, 1.4, 'Nutricion e', 'Hidatacion', { x: -1.8, y: -8 }, { x: -3.5, y: -5 }, 7.5);
-
+  label(ctx, x, y, radio, height, anguloInicial, 1.39, 'Nutricion e', 'Hidatacion', { x: -1.8, y: -8 }, { x: -3.5, y: -5 }, 7.5);
 };
 
 const label = (
@@ -283,7 +283,7 @@ const label = (
   label2,
   factor1: { x: number; y: number },
   factor2: { x: number; y: number },
-  fontSize: number = 8
+  fontSize: number = 8,
 ) => {
   let xTex;
   let yTex;
@@ -305,11 +305,10 @@ const label = (
   ctx.rotate(rotation);
   ctx.beginPath();
   ctx.fillStyle = '#948e8e';
-  ctx.font = 'bold '+fontSize+'pt Verdana';
+  ctx.font = 'bold ' + fontSize + 'pt Verdana';
   ctx.fillText(label2, 0, 0);
   ctx.restore();
 };
-
 
 const nameArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: number, anguloInicial: number, height: number, name?: string) => {
   if (ctx) {
@@ -452,25 +451,24 @@ export const drawReportAreaPersonal = (ctx: CanvasRenderingContext2D, personalRe
   let ai = 22.5;
   // console.log('drawReportArea', companyReport);
 
-   if (personalReport && personalReport.length > 0) {
-     // console.log('personalReport', personalReport);
+  if (personalReport && personalReport.length > 0) {
+    // console.log('personalReport', personalReport);
 
-     personalReport.forEach((elem: any) => {
-       elem.areas.map((area: any) => {
-         // // console.log(area);
-         const percent = Math.floor((parseFloat(area.value) * 100) / smallRadio(height));
+    personalReport.forEach((elem: any) => {
+      elem.areas.map((area: any) => {
+        // // console.log(area);
+        const percent = Math.floor((parseFloat(area.value) * 100) / smallRadio(height));
 
-         const radio = percent + bigRadio(height) - factor(height) * 4.3;
-         // this.area(this.width / 2, this.height / 2, bigRadio(height), i, ai)
-         // console.log(area.value);
-         reportArea(ctx, width / 2, height / 2, radio, ai, height, area.value, 'personal');
-         // this.nameArea(this.width / 2, this.height / 2, bigRadio(height), ai, area.sufix)
-         ai += 22.5;
-       });
-     });
-   }
+        const radio = percent + bigRadio(height) - factor(height) * 4.3;
+        // this.area(this.width / 2, this.height / 2, bigRadio(height), i, ai)
+        // console.log(area.value);
+        reportArea(ctx, width / 2, height / 2, radio, ai, height, area.value, 'personal');
+        // this.nameArea(this.width / 2, this.height / 2, bigRadio(height), ai, area.sufix)
+        ai += 22.5;
+      });
+    });
+  }
 };
-
 
 const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: number, anguloInicial: number, height: number, diference: number, type: string) => {
   if (ctx) {
@@ -486,7 +484,7 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
           yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         } else {
           xTex = x + (radio - factor(height)) * Math.cos(angleText);
-          yTex = y + (radio - factor(height)) * Math.sin(angleText)+ 30;
+          yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         }
         ctx.translate(xTex, yTex);
         // ctx.rotate(-1.4);
@@ -510,7 +508,7 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
       // M4
       if (anguloInicial == 90) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText) -15;
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) - 15;
         yTex = y + (radio - factor(height)) * Math.sin(angleText) + 30;
         ctx.translate(xTex, yTex);
         // ctx.rotate(-0.2);
@@ -518,8 +516,8 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
       // E1
       if (anguloInicial == 112.5) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText)- 25;
-        yTex = y + (radio - factor(height)) * Math.sin(angleText) +25;
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) - 25;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) + 25;
         ctx.translate(xTex, yTex);
         // ctx.rotate(0.1);
       }
@@ -527,22 +525,22 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
       if (anguloInicial == 135) {
         ctx.save();
         xTex = x + (radio - factor(height)) * Math.cos(angleText) - 30;
-        yTex = y + (radio - factor(height)) * Math.sin(angleText) ;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText);
         ctx.translate(xTex, yTex);
         // ctx.rotate(0.5);
       }
       // E3
       if (anguloInicial == 157.5) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText) -30;
-        yTex = y + (radio - factor(height)) * Math.sin(angleText) -5;
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) - 30;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) - 5;
         ctx.translate(xTex, yTex);
         // ctx.rotate(0.9);
       }
       // E4
       if (anguloInicial == 180) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText) -20;
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) - 20;
         yTex = y + (radio - factor(height)) * Math.sin(angleText) - 5;
         ctx.translate(xTex, yTex);
         // ctx.rotate(1.3);
@@ -601,7 +599,7 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
       //  F2
       if (anguloInicial == 315) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText) ;
+        xTex = x + (radio - factor(height)) * Math.cos(angleText);
         yTex = y + (radio - factor(height)) * Math.sin(angleText);
         ctx.translate(xTex, yTex);
         // ctx.rotate(6.9);
@@ -609,7 +607,7 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
       //  F3
       if (anguloInicial == 337.5) {
         ctx.save();
-        xTex = x + (radio - factor(height)) * Math.cos(angleText)+10;
+        xTex = x + (radio - factor(height)) * Math.cos(angleText) + 10;
         yTex = y + (radio - factor(height)) * Math.sin(angleText);
         ctx.translate(xTex, yTex);
         // ctx.rotate(7.3);
@@ -618,7 +616,7 @@ const reportArea = (ctx: CanvasRenderingContext2D, x: number, y: number, radio: 
       if (anguloInicial == 360) {
         ctx.save();
         xTex = x + (radio - factor(height)) * Math.cos(angleText);
-        yTex = y + (radio - factor(height)) * Math.sin(angleText) +20;
+        yTex = y + (radio - factor(height)) * Math.sin(angleText) + 20;
         ctx.translate(xTex, yTex);
         // ctx.rotate(7.7);
       }
@@ -648,7 +646,55 @@ export const drawScore = (ctx: CanvasRenderingContext2D, data: any, width: numbe
     ctx.save();
     ctx.fillStyle = '#bcc1c9';
     ctx.font = '10pt Verdana';
-    ctx.fillText(data.score ? data.score.name : 'Indice Global', width / 2 - 40, height / 2 + 20);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle'
+    const length = ctx.measureText(data.score ? data.score.name : 'Indice Global').width
+    console.log(length);
+    console.log(smallRadio(height));
+    let phrase = []
+    if (length > smallRadio(height)) {
+      const result = data.score.name.split(' ')
+      let currentPhrase = []
+      let aux = []
+      console.log(result);
+
+      result.forEach(word => {
+        aux.push(word)
+        console.log(ctx.measureText(aux.join(' ')).width);
+
+        if (ctx.measureText(aux.join(' ')).width < length -30) {
+          currentPhrase.push(word)
+        }
+
+        if (ctx.measureText(aux.join(' ')).width > length - 30) {
+          console.log('aux',word);
+
+          phrase.push(currentPhrase.join(' '));
+          currentPhrase = [];
+          aux = []
+          currentPhrase.push(word)
+          aux.push(word)
+
+          console.log(result.indexOf(word), result.length -1 );
+
+
+          if (result.indexOf(word) == result.length - 1) {
+            phrase.push(currentPhrase.join(' '))
+
+          }
+        }
+        console.log();
+
+
+      });
+      console.log(phrase);
+
+    }
+    let newLine = 20
+    phrase.forEach(elem => {
+      ctx.fillText(data.score ? elem : 'Indice Global', width / 2, height / 2 + newLine );
+      newLine+=20;
+    });
     ctx.restore();
   } else {
     ctx.save();

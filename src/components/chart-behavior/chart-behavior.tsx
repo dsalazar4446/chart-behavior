@@ -196,7 +196,7 @@ export class ChartBehavior {
       this.context.beginPath();
       this.context.fillStyle = '#ff6900';
       this.context.font = 'bold 15pt Verdana';
-      this.context.fillText('S', smallRadio(this.height), 90);
+      this.context.fillText('S', smallRadio(this.height) -15, 85);
       this.context.restore();
     }
   }
@@ -290,7 +290,7 @@ export class ChartBehavior {
         this.context.fillText('0%', 10, this.height - 50);
       }
       this.context.font = '7pt Verdana';
-      this.context.fillText('Empresa', 10, this.height - 35);
+      this.context.fillText('Empresa', 10, this.height - 15);
       this.context.fill();
       this.context.restore();
 
@@ -305,7 +305,7 @@ export class ChartBehavior {
       }
 
       this.context.font = '7pt Verdana';
-      this.context.fillText('Yo', 95, this.height - 35);
+      this.context.fillText('Yo', 95, this.height - 15);
       this.context.fill();
       this.context.restore();
 
@@ -317,7 +317,7 @@ export class ChartBehavior {
       this.context.fillStyle = '#ff6900';
       this.context.font = 'bold 15pt Verdana';
 
-      this.context.fillText('E', smallRadio(this.height), this.height - 10);
+      this.context.fillText('E', smallRadio(this.height) - 15, this.height - 10);
       this.context.restore();
     }
   }
@@ -372,7 +372,7 @@ export class ChartBehavior {
         this.context.fillText('0%', this.width - 120, this.height - 50);
       }
       this.context.font = '7pt Verdana';
-      this.context.fillText('Empresa', this.width - 120, this.height - 35);
+      this.context.fillText('Empresa', this.width - 120, this.height - 13);
       this.context.fill();
       this.context.restore();
 
@@ -386,7 +386,7 @@ export class ChartBehavior {
         this.context.fillText('0%', this.width - 40, this.height - 50);
       }
       this.context.font = '7pt Verdana';
-      this.context.fillText('Yo', this.width - 40, this.height - 35);
+      this.context.fillText('Yo', this.width - 40, this.height - 13);
       this.context.fill();
       this.context.restore();
 
@@ -400,7 +400,7 @@ export class ChartBehavior {
       this.context.fillStyle = '#ff6900';
       this.context.font = 'bold 15pt Verdana';
 
-      this.context.fillText('M', this.width - smallRadio(this.height), this.height - 10);
+      this.context.fillText('M', this.width - smallRadio(this.height) + 10, this.height - 10);
       this.context.restore();
     }
   }
@@ -416,7 +416,7 @@ export class ChartBehavior {
         this.context.fillText('0%', this.width - 120, 45);
       }
       this.context.font = '7pt Verdana';
-      this.context.fillText('Empresa', this.width - 120, smallRadio(this.height));
+      this.context.fillText('Empresa', this.width - 120, smallRadio(this.height)+3);
       this.context.fill();
       this.context.restore();
 
@@ -430,7 +430,7 @@ export class ChartBehavior {
         this.context.fillText('0%', this.width - 40, 45);
       }
       this.context.font = '7pt Verdana';
-      this.context.fillText('Yo', this.width - 40, smallRadio(this.height));
+      this.context.fillText('Yo', this.width - 40, smallRadio(this.height) + 3);
       this.context.fill();
       this.context.restore();
 

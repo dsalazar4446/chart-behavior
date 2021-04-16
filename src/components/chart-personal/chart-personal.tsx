@@ -99,6 +99,8 @@ export class ChartPersonal {
     // // // console.log(document.getElementById('canvas'));
     this.canvas = document.getElementById('canvasPersonal');
     this.context = this.canvas.getContext('2d');
+    console.log(this.canvas);
+
   }
 
   render() {
